@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<!-- Created by Balaji | SCAMPER on CCTV: Smart Campus Camera -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="author" content="Balaji">
+  <meta name="copyright" content="© 2026 Balaji. All rights reserved.">
+  <meta name="description" content="SCAMPER on CCTV: Smart Campus Camera - An interactive animated cartoon experience reimagining campus security using the SCAMPER method. Created by Balaji.">
+  <title>SCAMPER on CCTV: Smart Campus Camera | By Balaji</title>
+
+  <!-- Google Fonts: Fredoka & Outfit for modern cartoon aesthetics -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       SITE HEADER (Prominently Created by Balaji)
+       ========================================== -->
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <div class="header-brand">
+        <span class="brand-camera-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+            <rect x="2" y="7" width="22" height="18" rx="6" fill="#FF4757"/>
+            <path d="M24 12L30 8V24L24 20V12Z" fill="#FFA502"/>
+            <circle cx="13" cy="16" r="5" fill="#FFFFFF"/>
+            <circle cx="13" cy="16" r="3" fill="#1E90FF"/>
+            <circle cx="14" cy="15" r="1.2" fill="#FFFFFF"/>
+            <circle cx="6" cy="11" r="1.8" fill="#2ED573"/>
+          </svg>
+        </span>
+        <span class="brand-title">SCAMPER CCTV</span>
+      </div>
+
+      <!-- Medium size, clearly visible author in header as requested -->
+      <div class="header-author" title="Project Author">
+        <span class="author-label">Created by</span>
+        <span class="author-name">Balaji</span>
+      </div>
+
+      <div class="header-controls">
+        <button id="autoTourBtn" class="btn-pill-tour" title="Play automated campus story tour">
+          <span class="tour-icon">▶</span>
+          <span class="tour-label">Auto Tour</span>
+        </button>
+        <button id="motionToggle" class="btn-icon" aria-label="Pause animations" title="Pause / Resume animations">
+          <svg class="icon-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       STICKY MINI PROGRESS BAR (S C A M P E R)
+       ========================================== -->
+  <nav class="scamper-nav" id="scamperNav" aria-label="SCAMPER Progress Navigation">
+    <div class="scamper-nav-track">
+      <a href="#scene-s" class="nav-letter letter-s active" data-scene="s" title="S - Substitute">
+        <span class="letter-badge">S</span>
+        <span class="nav-label">Substitute</span>
+      </a>
+      <a href="#scene-c" class="nav-letter letter-c" data-scene="c" title="C - Combine">
+        <span class="letter-badge">C</span>
+        <span class="nav-label">Combine</span>
+      </a>
+      <a href="#scene-a" class="nav-letter letter-a" data-scene="a" title="A - Adapt">
+        <span class="letter-badge">A</span>
+        <span class="nav-label">Adapt</span>
+      </a>
+      <a href="#scene-m" class="nav-letter letter-m" data-scene="m" title="M - Modify">
+        <span class="letter-badge">M</span>
+        <span class="nav-label">Modify</span>
+      </a>
+      <a href="#scene-p" class="nav-letter letter-p" data-scene="p" title="P - Put to another use">
+        <span class="letter-badge">P</span>
+        <span class="nav-label">Put to Use</span>
+      </a>
+      <a href="#scene-e" class="nav-letter letter-e" data-scene="e" title="E - Eliminate">
+        <span class="letter-badge">E</span>
+        <span class="nav-label">Eliminate</span>
+      </a>
+      <a href="#scene-r" class="nav-letter letter-r" data-scene="r" title="R - Reverse">
+        <span class="letter-badge">R</span>
+        <span class="nav-label">Reverse</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Floating Quick Step Pill (Next / Prev Scene) -->
+  <aside class="quick-nav-dock" aria-label="Quick scene navigation">
+    <button class="dock-btn btn-prev" id="btnPrevScene" title="Previous scene (↑ or Shift+Space)">▲</button>
+    <span class="dock-indicator" id="dockIndicator">1 / 7</span>
+    <button class="dock-btn btn-next" id="btnNextScene" title="Next scene (↓ or Space)">▼</button>
+  </aside>
+
+  <main id="mainContent">
+
+    <!-- ==========================================
+         INTRO SCREEN
+         ========================================== -->
+    <section class="screen intro-screen" id="intro">
+      <div class="screen-bg-glow"></div>
+      
+      <!-- Campus Skyline Backdrop -->
+      <div class="campus-skyline-bg" aria-hidden="true">
+        <svg viewBox="0 0 1200 240" preserveAspectRatio="none" class="skyline-svg">
+          <path d="M0,240 L0,180 L40,180 L40,140 L70,120 L100,140 L100,180 L180,180 L180,110 L230,110 L230,80 L260,60 L290,80 L290,110 L340,110 L340,180 L450,180 L450,130 L480,130 L480,180 L560,180 L560,90 L610,60 L660,90 L660,180 L760,180 L760,120 L820,120 L820,180 L920,180 L920,100 L950,80 L980,100 L980,180 L1070,180 L1070,140 L1120,140 L1120,180 L1200,180 L1200,240 Z" fill="rgba(255,255,255,0.06)"/>
+          <circle cx="80" cy="50" r="30" fill="rgba(255,255,255,0.08)"/>
+        </svg>
+      </div>
+
+      <div class="intro-container">
+        <div class="intro-badge-pill">SMART CAMPUS CCTV</div>
+        <h1 class="intro-title">SCAMPER on CCTV</h1>
+        <p class="intro-tagline">Smart Campus Camera</p>
+
+        <!-- The 7 colorful letters popping in -->
+        <div class="letters-pop-grid" id="lettersPop">
+          <span class="pop-char char-s" style="--delay: 0.1s" title="Substitute">S</span>
+          <span class="pop-char char-c" style="--delay: 0.2s" title="Combine">C</span>
+          <span class="pop-char char-a" style="--delay: 0.3s" title="Adapt">A</span>
+          <span class="pop-char char-m" style="--delay: 0.4s" title="Modify">M</span>
+          <span class="pop-char char-p" style="--delay: 0.5s" title="Put to another use">P</span>
+          <span class="pop-char char-e" style="--delay: 0.6s" title="Eliminate">E</span>
+          <span class="pop-char char-r" style="--delay: 0.7s" title="Reverse">R</span>
+        </div>
+
+        <!-- Mascot Camera Animation -->
+        <div class="hero-mascot-wrap">
+          <div class="hero-mascot interactive-char" data-tooltip="Hi! I'm CamBot! Tap me!" tabindex="0" role="button" aria-label="AI Robot Mascot">
+            <svg viewBox="0 0 200 200" class="mascot-svg">
+              <defs>
+                <linearGradient id="robotGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFFFFF"/>
+                  <stop offset="100%" stop-color="#DFF3FF"/>
+                </linearGradient>
+                <linearGradient id="visorGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#0A192F"/>
+                  <stop offset="100%" stop-color="#172A45"/>
+                </linearGradient>
+                <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="3" result="blur"/>
+                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+              </defs>
+              <ellipse cx="100" cy="180" rx="42" ry="12" fill="rgba(0,0,0,0.22)" class="char-shadow"/>
+              
+              <g class="mascot-hover-body">
+                <!-- Antenna -->
+                <path d="M100,50 L100,28" stroke="#70A1FF" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="100" cy="24" r="8" fill="#00D2D3" filter="url(#glowCyan)" class="antenna-ball"/>
+                <circle cx="100" cy="24" r="3.5" fill="#FFFFFF"/>
+                
+                <!-- Hover Jet Base -->
+                <ellipse cx="100" cy="148" rx="28" ry="8" fill="#70A1FF"/>
+                <path d="M88,154 Q100,175 112,154 Z" fill="#00D2D3" class="jet-flame"/>
+                
+                <!-- Robot Capsule Body -->
+                <rect x="52" y="46" width="96" height="102" rx="48" fill="url(#robotGrad)" stroke="#E0E6ED" stroke-width="3"/>
+                <!-- Blush Cheeks -->
+                <circle cx="68" cy="116" r="7" fill="#FF7F50" opacity="0.6"/>
+                <circle cx="132" cy="116" r="7" fill="#FF7F50" opacity="0.6"/>
+                <!-- Screen Visor -->
+                <rect x="64" y="74" width="72" height="42" rx="16" fill="url(#visorGrad)"/>
+                <!-- Expressive Eyes -->
+                <g class="mascot-eyes" filter="url(#glowCyan)">
+                  <ellipse cx="82" cy="95" rx="7" ry="10" fill="#00D2D3" class="eye-left"/>
+                  <ellipse cx="118" cy="95" rx="7" ry="10" fill="#00D2D3" class="eye-right"/>
+                  <circle cx="85" cy="92" r="2.5" fill="#FFFFFF"/>
+                  <circle cx="121" cy="92" r="2.5" fill="#FFFFFF"/>
+                </g>
+                <!-- Waving Left Arm -->
+                <g class="mascot-wave-arm">
+                  <path d="M52,98 Q30,80 34,64" stroke="#DFF3FF" stroke-width="8" stroke-linecap="round" fill="none"/>
+                  <circle cx="34" cy="62" r="8" fill="#00D2D3"/>
+                </g>
+                <!-- Right Arm -->
+                <path d="M148,98 Q164,110 166,125" stroke="#DFF3FF" stroke-width="8" stroke-linecap="round" fill="none"/>
+                <circle cx="166" cy="126" r="7" fill="#70A1FF"/>
+                <!-- Badge -->
+                <circle cx="100" cy="132" r="6" fill="#FF4757"/>
+                <circle cx="100" cy="132" r="2.5" fill="#FFFFFF"/>
+              </g>
+            </svg>
+          </div>
+          <div class="mascot-speech-bubble">Explore 7 Smart Ideas! 👇</div>
+        </div>
+
+        <a href="#scene-s" class="scroll-down-btn" aria-label="Scroll to first scene">
+          <span class="btn-text">Begin Campus Tour</span>
+          <svg class="chevron-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SCENE 1: S - SUBSTITUTE (Red: #FF4757)
+         Control Room: Guard sleeping at wall of monitors. AI mascot wakes up,
+         scans screens, spots person with red box, sends alert to guard's phone.
+         =================================================================== -->
+    <section class="scene-section scene-s" id="scene-s" data-letter="S">
+      <div class="scene-header">
+        <div class="scene-badge badge-s">S</div>
+        <h2 class="scene-title">AI Guard Assistant</h2>
+      </div>
+
+      <div class="scene-stage">
+        <svg viewBox="0 0 800 500" class="scene-svg" id="svg-scene-s" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="crWallGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2D1117"/>
+              <stop offset="100%" stop-color="#18090C"/>
+            </linearGradient>
+            <linearGradient id="crDeskGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#3D1D23"/>
+              <stop offset="100%" stop-color="#55242C"/>
+            </linearGradient>
+            <radialGradient id="screenGlowGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#1E90FF" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#0A192F" stop-opacity="0.8"/>
+            </radialGradient>
+            <filter id="alertGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+          </defs>
+
+          <!-- Control Room Wall -->
+          <rect x="0" y="0" width="800" height="500" fill="url(#crWallGrad)"/>
+          <line x1="0" y1="360" x2="800" y2="360" stroke="#FF4757" stroke-width="1.5" opacity="0.3"/>
+          <rect x="0" y="360" width="800" height="140" fill="#140608"/>
+
+          <!-- Wall Monitor Bank (6 screens) -->
+          <rect x="80" y="35" width="640" height="235" rx="10" fill="#1B1214" stroke="#482228" stroke-width="3"/>
+          
+          <!-- Screen 1: Library -->
+          <rect x="100" y="50" width="180" height="95" rx="5" fill="#0A121E" stroke="#253549" stroke-width="2"/>
+          <path d="M120,125 L160,95 L200,120 L240,85 L260,125" stroke="#224263" stroke-width="2" fill="none"/>
+          <text x="110" y="68" fill="#6A8CAE" font-size="9" font-family="monospace">● REC  CAM 01 • LIBRARY</text>
+          
+          <!-- Screen 2: Gate -->
+          <rect x="310" y="50" width="180" height="95" rx="5" fill="#0A121E" stroke="#253549" stroke-width="2"/>
+          <circle cx="400" cy="95" r="16" fill="#1A2D44"/>
+          <text x="320" y="68" fill="#6A8CAE" font-size="9" font-family="monospace">● REC  CAM 02 • MAIN GATE</text>
+
+          <!-- Screen 3: Dark Lane (TARGET DETECTED HERE) -->
+          <rect x="520" y="50" width="180" height="95" rx="5" fill="#0B1524" stroke="#253549" stroke-width="2" id="sScreenTarget"/>
+          <text x="530" y="68" fill="#FF6B81" font-size="9" font-family="monospace">● ALERT  CAM 03 • LANE 4</text>
+          
+          <!-- Intruder Silhouette on Screen 3 -->
+          <g class="intruder-silhouette">
+            <circle cx="610" cy="94" r="8" fill="#607D8B"/>
+            <path d="M602,104 Q610,102 618,104 L622,132 L598,132 Z" fill="#607D8B"/>
+          </g>
+
+          <!-- Red Detection Box (Appears & Pulses) -->
+          <g class="target-box-group" filter="url(#alertGlow)">
+            <rect x="588" y="82" width="44" height="54" fill="none" stroke="#FF4757" stroke-width="2.5" stroke-dasharray="8 3" class="s-target-box"/>
+            <path d="M584,78 L594,78 M584,78 L584,88" stroke="#FF4757" stroke-width="3"/>
+            <path d="M636,78 L626,78 M636,78 L636,88" stroke="#FF4757" stroke-width="3"/>
+            <path d="M584,140 L594,140 M584,140 L584,130" stroke="#FF4757" stroke-width="3"/>
+            <path d="M636,140 L626,140 M636,140 L636,130" stroke="#FF4757" stroke-width="3"/>
+            <rect x="586" y="68" width="48" height="13" rx="3" fill="#FF4757"/>
+            <text x="591" y="78" fill="#FFFFFF" font-size="8" font-weight="bold" font-family="sans-serif">INTRUDER</text>
+          </g>
+
+          <!-- Screen 4: Canteen -->
+          <rect x="100" y="155" width="180" height="95" rx="5" fill="#0A121E" stroke="#253549" stroke-width="2"/>
+          <text x="110" y="173" fill="#6A8CAE" font-size="9" font-family="monospace">● REC  CAM 04 • CANTEEN</text>
+
+          <!-- Screen 5: Lab -->
+          <rect x="310" y="155" width="180" height="95" rx="5" fill="#0A121E" stroke="#253549" stroke-width="2"/>
+          <text x="320" y="173" fill="#6A8CAE" font-size="9" font-family="monospace">● REC  CAM 05 • LAB 2</text>
+
+          <!-- Screen 6: Playground -->
+          <rect x="520" y="155" width="180" height="95" rx="5" fill="#0A121E" stroke="#253549" stroke-width="2"/>
+          <text x="530" y="173" fill="#6A8CAE" font-size="9" font-family="monospace">● REC  CAM 06 • PLAYGROUND</text>
+
+          <!-- Status LEDs on Monitor Rack -->
+          <circle cx="120" cy="43" r="3" fill="#2ED573"/>
+          <circle cx="132" cy="43" r="3" fill="#2ED573"/>
+          <circle cx="144" cy="43" r="3" fill="#FFA502"/>
+
+          <!-- Security Desk in Foreground -->
+          <rect x="60" y="340" width="680" height="140" rx="8" fill="url(#crDeskGrad)" stroke="#742A36" stroke-width="2"/>
+          <rect x="240" y="352" width="200" height="30" rx="4" fill="#221014"/>
+
+          <!-- Steaming Coffee Mug -->
+          <g transform="translate(180, 345)">
+            <rect x="0" y="0" width="22" height="26" rx="4" fill="#E2E8F0"/>
+            <path d="M22,6 C28,6 28,20 22,20" stroke="#E2E8F0" stroke-width="3" fill="none"/>
+            <ellipse cx="11" cy="4" rx="9" ry="3" fill="#795548"/>
+            <path d="M10,-2 Q7,-8 11,-14" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" fill="none" class="steam-line"/>
+          </g>
+
+          <!-- Guard's Smartphone on Desk (Alert Vibrations!) -->
+          <g class="guard-phone" transform="translate(470, 348)">
+            <path d="M-6,8 Q-12,18 -6,28" stroke="#FF4757" stroke-width="2" fill="none" class="phone-vibe-left"/>
+            <path d="M26,8 Q32,18 26,28" stroke="#FF4757" stroke-width="2" fill="none" class="phone-vibe-right"/>
+            <rect x="0" y="0" width="20" height="36" rx="4" fill="#1E293B" stroke="#64748B" stroke-width="1.5"/>
+            <rect x="2" y="4" width="16" height="28" rx="2" fill="#FF4757" class="phone-screen-flash"/>
+            <polygon points="10,8 5,20 15,20" fill="#FFFFFF"/>
+            <circle cx="10" cy="24" r="1.5" fill="#FFFFFF"/>
+          </g>
+
+          <!-- Guard Character (Sleeping then Snapping Awake) -->
+          <g class="guard-character interactive-char" data-tooltip="Officer Dan: Tap to wake me!" tabindex="0" role="button" aria-label="Security Guard">
+            <rect x="270" y="270" width="90" height="120" rx="14" fill="#1A1F2C"/>
+            
+            <g class="guard-body-group">
+              <path d="M280,335 Q315,315 350,335 L355,420 L275,420 Z" fill="#1E3799"/>
+              <rect x="280" y="332" width="16" height="6" rx="2" fill="#FFA502"/>
+              <rect x="334" y="332" width="16" height="6" rx="2" fill="#FFA502"/>
+              <polygon points="325,348 335,348 335,360 330,366 325,360" fill="#FFD700"/>
+              <ellipse cx="315" cy="360" rx="36" ry="12" fill="#152870"/>
+
+              <g class="guard-head">
+                <circle cx="315" cy="295" r="26" fill="#FAD0C4"/>
+                <circle cx="298" cy="305" r="4" fill="#FF8A80" opacity="0.6"/>
+                <circle cx="332" cy="305" r="4" fill="#FF8A80" opacity="0.6"/>
+                <path d="M305,306 Q315,314 325,306 Q315,302 305,306 Z" fill="#4A342B"/>
+                
+                <g class="guard-eyes-sleeping">
+                  <path d="M300,295 Q305,299 310,295" stroke="#4A342B" stroke-width="2.5" fill="none"/>
+                  <path d="M320,295 Q325,299 330,295" stroke="#4A342B" stroke-width="2.5" fill="none"/>
+                </g>
+                <g class="guard-eyes-awake">
+                  <circle cx="305" cy="293" r="6" fill="#FFFFFF"/>
+                  <circle cx="325" cy="293" r="6" fill="#FFFFFF"/>
+                  <circle cx="305" cy="293" r="3.5" fill="#1E293B"/>
+                  <circle cx="325" cy="293" r="3.5" fill="#1E293B"/>
+                </g>
+
+                <ellipse cx="315" cy="276" rx="28" ry="10" fill="#1E3799"/>
+                <path d="M292,274 Q315,260 338,274 L342,282 L288,282 Z" fill="#1E3799"/>
+                <path d="M292,282 Q315,290 338,282 L342,286 Q315,296 288,286 Z" fill="#111827"/>
+                <rect x="294" y="278" width="42" height="4" fill="#FFA502"/>
+                <circle cx="315" cy="273" r="4" fill="#FFD700"/>
+              </g>
+            </g>
+
+            <!-- Floating Zzz (Sleeping) -->
+            <g class="floating-zzz">
+              <text x="345" y="270" fill="#FFA502" font-size="16" font-family="'Fredoka', sans-serif" font-weight="bold" class="zzz-1">Z</text>
+              <text x="358" y="252" fill="#FFA502" font-size="20" font-family="'Fredoka', sans-serif" font-weight="bold" class="zzz-2">z</text>
+              <text x="372" y="232" fill="#FFA502" font-size="24" font-family="'Fredoka', sans-serif" font-weight="bold" class="zzz-3">z</text>
+            </g>
+
+            <!-- Exclamation Mark Bubble (Wakes Up) -->
+            <g class="guard-exclamation">
+              <circle cx="350" cy="245" r="16" fill="#FF4757"/>
+              <text x="346" y="252" fill="#FFFFFF" font-size="20" font-family="'Outfit', sans-serif" font-weight="900">!</text>
+            </g>
+          </g>
+
+          <!-- AI Robot Mascot ("CamBot") -->
+          <g class="cambot-character interactive-char" data-tooltip="CamBot: AI Patrol Scanning" tabindex="0" role="button" aria-label="AI Robot Mascot">
+            <!-- Volumetric Blue Scanning Beam -->
+            <polygon points="560,260 520,55 700,55" fill="url(#screenGlowGrad)" class="cambot-scan-beam"/>
+            
+            <!-- Alert Ray from Robot to Guard Phone -->
+            <path d="M570,300 Q540,320 480,345" stroke="#FF4757" stroke-width="3" stroke-dasharray="6 4" fill="none" class="alert-wifi-beam"/>
+            <circle cx="485" cy="343" r="5" fill="#FF4757" class="alert-pulse-circle"/>
+
+            <!-- Robot Body Group -->
+            <g class="cambot-float-group" transform="translate(530, 220)">
+              <ellipse cx="38" cy="80" rx="14" ry="4" fill="rgba(0,210,211,0.5)" class="robot-jet"/>
+              <rect x="8" y="10" width="60" height="68" rx="30" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+              <rect x="16" y="25" width="44" height="26" rx="10" fill="#0A192F"/>
+              <ellipse cx="28" cy="38" rx="4" ry="6" fill="#00D2D3" class="cambot-eye-l"/>
+              <ellipse cx="48" cy="38" rx="4" ry="6" fill="#00D2D3" class="cambot-eye-r"/>
+              <line x1="38" y1="10" x2="38" y2="-2" stroke="#70A1FF" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="38" cy="-5" r="5" fill="#FF4757" class="cambot-antenna-light" filter="url(#alertGlow)"/>
+              <circle cx="18" cy="52" r="3" fill="#FF7F50" opacity="0.6"/>
+              <circle cx="58" cy="52" r="3" fill="#FF7F50" opacity="0.6"/>
+              <path d="M8,42 Q-6,30 2,20" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" fill="none"/>
+              <circle cx="2" cy="19" r="4" fill="#00D2D3"/>
+              <path d="M68,42 Q82,45 80,56" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" fill="none"/>
+              <circle cx="80" cy="56" r="4" fill="#70A1FF"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Interactive Scene Controls -->
+      <div class="scene-actions">
+        <button class="scene-interactive-btn btn-trigger-alert" id="btnTriggerAlertS">🚨 Trigger Intruder Alert</button>
+        <button class="scene-replay-btn" data-target="scene-s">Replay Action ↺</button>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SCENE 2: C - COMBINE (Orange: #FF7F50)
+         Canteen: Camera with thermal sensor & siren.
+         Fire appears, thermometer rises, siren flashes. Hand covers lens -> siren rings again!
+         =================================================================== -->
+    <section class="scene-section scene-c" id="scene-c" data-letter="C">
+      <div class="scene-header">
+        <div class="scene-badge badge-c">C</div>
+        <h2 class="scene-title">Thermal Fire Siren</h2>
+      </div>
+
+      <div class="scene-stage">
+        <svg viewBox="0 0 800 500" class="scene-svg" id="svg-scene-c" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="canteenWallGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2D1306"/>
+              <stop offset="100%" stop-color="#140802"/>
+            </linearGradient>
+            <linearGradient id="fireGrad" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0%" stop-color="#FF3838"/>
+              <stop offset="50%" stop-color="#FF7F50"/>
+              <stop offset="100%" stop-color="#FFD700"/>
+            </linearGradient>
+            <linearGradient id="thermoGrad" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0%" stop-color="#2ED573"/>
+              <stop offset="50%" stop-color="#FFA502"/>
+              <stop offset="100%" stop-color="#FF4757"/>
+            </linearGradient>
+            <filter id="sirenStrobe" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="6" result="blur"/>
+              <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+          </defs>
+
+          <!-- Canteen Background Wall with Kitchen Tile Pattern -->
+          <rect x="0" y="0" width="800" height="500" fill="url(#canteenWallGrad)"/>
+          <g opacity="0.08" stroke="#FFFFFF" stroke-width="1">
+            <line x1="0" y1="80" x2="800" y2="80"/>
+            <line x1="0" y1="160" x2="800" y2="160"/>
+            <line x1="0" y1="240" x2="800" y2="240"/>
+            <line x1="0" y1="320" x2="800" y2="320"/>
+            <line x1="160" y1="0" x2="160" y2="360"/>
+            <line x1="320" y1="0" x2="320" y2="360"/>
+            <line x1="480" y1="0" x2="480" y2="360"/>
+            <line x1="640" y1="0" x2="640" y2="360"/>
+          </g>
+          
+          <rect x="0" y="370" width="800" height="130" fill="#1C0A02"/>
+          <line x1="0" y1="370" x2="800" y2="370" stroke="#FF7F50" stroke-width="2" opacity="0.4"/>
+
+          <!-- Canteen Counter Table -->
+          <rect x="120" y="310" width="560" height="90" rx="6" fill="#3D1A08" stroke="#682D0E" stroke-width="2"/>
+          <rect x="100" y="300" width="600" height="18" rx="4" fill="#58240A"/>
+          
+          <!-- Stove / Burner -->
+          <rect x="220" y="285" width="130" height="16" rx="3" fill="#2D3748"/>
+          <ellipse cx="285" cy="285" rx="36" ry="6" fill="#1A202C"/>
+          <ellipse cx="285" cy="285" rx="20" ry="3" fill="#4A5568"/>
+
+          <!-- Animated Fire Flames -->
+          <g class="canteen-fire-group" filter="url(#sirenStrobe)">
+            <path d="M255,282 Q270,210 285,170 Q300,210 315,282 Q285,290 255,282 Z" fill="url(#fireGrad)" class="flame-outer"/>
+            <path d="M268,282 Q280,230 285,200 Q292,230 302,282 Z" fill="#FFEAA7" class="flame-inner"/>
+            <circle cx="280" cy="180" r="3" fill="#FFA502" class="fire-spark sp-1"/>
+            <circle cx="295" cy="165" r="2.5" fill="#FF4757" class="fire-spark sp-2"/>
+            <circle cx="270" cy="195" r="2" fill="#FFD700" class="fire-spark sp-3"/>
+          </g>
+
+          <!-- Student Mia in Canteen (Surprised!) -->
+          <g class="student-mia interactive-char" transform="translate(130, 220)" data-tooltip="Mia: Whoa! Hot stove!" tabindex="0" role="button" aria-label="Student Mia">
+            <ellipse cx="30" cy="155" rx="20" ry="6" fill="rgba(0,0,0,0.3)"/>
+            <path d="M15,95 Q30,85 45,95 L48,150 L12,150 Z" fill="#FF7F50"/>
+            <circle cx="30" cy="65" r="18" fill="#FAD0C4"/>
+            <path d="M16,55 Q5,50 8,36 Q22,40 26,52 Z" fill="#4A2E18"/>
+            <circle cx="16" cy="52" r="4" fill="#FF4757"/>
+            <circle cx="26" cy="64" r="3" fill="#1E293B"/>
+            <circle cx="36" cy="64" r="3" fill="#1E293B"/>
+            <ellipse cx="31" cy="74" rx="3.5" ry="5" fill="#4A2E18"/>
+            <path d="M14,98 Q-2,85 2,72" stroke="#FF7F50" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <path d="M46,98 Q62,85 58,72" stroke="#FF7F50" stroke-width="6" stroke-linecap="round" fill="none"/>
+          </g>
+
+          <!-- Camera Wall Mount Bracket -->
+          <rect x="470" y="30" width="16" height="50" fill="#4A5568"/>
+          <path d="M470,60 L420,60 L420,80" stroke="#718096" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+          <!-- Combined Camera Unit -->
+          <g class="combined-camera-unit" transform="translate(370, 70)">
+            <!-- Top Emergency Siren -->
+            <g class="siren-unit" filter="url(#sirenStrobe)">
+              <rect x="36" y="2" width="28" height="12" rx="3" fill="#2D3748"/>
+              <path d="M38,2 Q50,-16 62,2 Z" fill="#FF3838" class="siren-dome-lens"/>
+              <polygon points="50,-8 10,-40 25,-48" fill="rgba(255, 71, 87, 0.45)" class="siren-beam beam-l"/>
+              <polygon points="50,-8 90,-40 75,-48" fill="rgba(255, 127, 80, 0.45)" class="siren-beam beam-r"/>
+              <path d="M26,-10 A30,30 0 0,0 26,14" stroke="#FF3838" stroke-width="3" fill="none" class="sonic-wave s-1"/>
+              <path d="M74,-10 A30,30 0 0,1 74,14" stroke="#FF7F50" stroke-width="3" fill="none" class="sonic-wave s-2"/>
+            </g>
+
+            <!-- Camera Main Body -->
+            <rect x="20" y="14" width="70" height="38" rx="8" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="2"/>
+            <rect x="5" y="22" width="16" height="22" rx="4" fill="#334155"/>
+            <circle cx="12" cy="33" r="7" fill="#0EA5E9" id="cNormalLens"/>
+            <circle cx="10" cy="31" r="2" fill="#FFFFFF"/>
+
+            <!-- Thermal IR Sensor Below Lens -->
+            <g class="thermal-sensor-lens" transform="translate(18, 52)">
+              <rect x="0" y="0" width="34" height="14" rx="4" fill="#1E293B" stroke="#FF7F50" stroke-width="1.5"/>
+              <circle cx="8" cy="7" r="4" fill="#FF4757"/>
+              <circle cx="24" cy="7" r="4" fill="#FFA502"/>
+              <text x="38" y="11" fill="#FF7F50" font-size="8" font-family="'Fredoka', sans-serif" font-weight="bold">IR THERMAL</text>
+            </g>
+
+            <polygon points="18,58 -80,220 -30,220" fill="rgba(255, 127, 80, 0.25)" class="thermal-scan-cone"/>
+          </g>
+
+          <!-- Thermometer Indicator Widget -->
+          <g class="thermo-widget" transform="translate(560, 90)">
+            <rect x="0" y="0" width="75" height="140" rx="8" fill="#1E130B" stroke="#FF7F50" stroke-width="2"/>
+            <text x="12" y="18" fill="#FFA502" font-size="9" font-family="'Fredoka', sans-serif" font-weight="bold">TEMP °C</text>
+            <rect x="22" y="28" width="12" height="75" rx="6" fill="#0F172A" stroke="#475569" stroke-width="1.5"/>
+            <circle cx="28" cy="112" r="14" fill="#FF3838"/>
+            <circle cx="25" cy="110" r="4" fill="#FFFFFF" opacity="0.6"/>
+            <rect x="24" y="98" width="8" height="10" rx="4" fill="url(#thermoGrad)" class="thermo-mercury-bar"/>
+            
+            <line x1="38" y1="36" x2="44" y2="36" stroke="#EF4444" stroke-width="1.5"/>
+            <text x="47" y="39" fill="#EF4444" font-size="7" font-family="monospace">120°</text>
+            <line x1="38" y1="62" x2="44" y2="62" stroke="#F59E0B" stroke-width="1.5"/>
+            <text x="47" y="65" fill="#F59E0B" font-size="7" font-family="monospace">60°</text>
+            <line x1="38" y1="88" x2="44" y2="88" stroke="#10B981" stroke-width="1.5"/>
+            <text x="47" y="91" fill="#10B981" font-size="7" font-family="monospace">24°</text>
+            <text x="12" y="132" fill="#FF4757" font-size="11" font-family="'Outfit', sans-serif" font-weight="900" class="thermo-digits">98°C</text>
+          </g>
+
+          <!-- Tamper Hand Covering Lens -->
+          <g class="tamper-hand-group">
+            <path d="M300,40 Q350,70 380,95" stroke="#FAD0C4" stroke-width="16" stroke-linecap="round" fill="none" class="tamper-arm"/>
+            <ellipse cx="382" cy="98" rx="14" ry="12" fill="#FAD0C4" class="tamper-palm"/>
+            <rect x="372" y="90" width="8" height="16" rx="4" fill="#FAD0C4" transform="rotate(-20 376 98)"/>
+            <rect x="380" y="88" width="8" height="18" rx="4" fill="#FAD0C4" transform="rotate(-5 384 97)"/>
+            <rect x="388" y="90" width="8" height="16" rx="4" fill="#FAD0C4" transform="rotate(15 392 98)"/>
+
+            <g class="tamper-alert-badge" transform="translate(365, 125)">
+              <rect x="0" y="0" width="80" height="22" rx="4" fill="#FF3838" stroke="#FFFFFF" stroke-width="1.5"/>
+              <text x="7" y="15" fill="#FFFFFF" font-size="9" font-family="'Fredoka', sans-serif" font-weight="bold">TAMPER ALERT!</text>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <div class="scene-actions">
+        <button class="scene-interactive-btn btn-fire-test" id="btnFireTestC">🔥 Flame Flare</button>
+        <button class="scene-interactive-btn btn-tamper-test" id="btnTamperTestC">✋ Cover Lens</button>
+        <button class="scene-replay-btn" data-target="scene-c">Replay Action ↺</button>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SCENE 3: A - ADAPT (Yellow: #FFA502)
+         Classroom: Students sit in a classroom. Camera scans their faces one by one,
+         each gets a green tick, attendance counter goes up (0/4 -> 4/4).
+         =================================================================== -->
+    <section class="scene-section scene-a" id="scene-a" data-letter="A">
+      <div class="scene-header">
+        <div class="scene-badge badge-a">A</div>
+        <h2 class="scene-title">Class Attendance Scan</h2>
+      </div>
+
+      <div class="scene-stage">
+        <svg viewBox="0 0 800 500" class="scene-svg" id="svg-scene-a" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="classWallGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#261A02"/>
+              <stop offset="100%" stop-color="#140C01"/>
+            </linearGradient>
+            <linearGradient id="chalkboardGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#1E392A"/>
+              <stop offset="100%" stop-color="#0F2419"/>
+            </linearGradient>
+            <radialGradient id="faceScanRay" cx="50%" cy="0%" r="100%">
+              <stop offset="0%" stop-color="#2ED573" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#2ED573" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="tickGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+          </defs>
+
+          <!-- Classroom Wall Background -->
+          <rect x="0" y="0" width="800" height="500" fill="url(#classWallGrad)"/>
+          <line x1="0" y1="360" x2="800" y2="360" stroke="#FFA502" stroke-width="2" opacity="0.3"/>
+          <rect x="0" y="360" width="800" height="140" fill="#140901"/>
+
+          <!-- Chalkboard -->
+          <rect x="80" y="70" width="460" height="150" rx="8" fill="url(#chalkboardGrad)" stroke="#8D6E63" stroke-width="6"/>
+          <text x="110" y="110" fill="#E8F5E9" font-size="16" font-family="'Fredoka', cursive" opacity="0.85">AI SMART ATTENDANCE 101</text>
+          <path d="M110,130 L180,130 M110,150 L240,150 M110,170 L200,170" stroke="#C8E6C9" stroke-width="2" stroke-dasharray="6 4" opacity="0.5"/>
+          <text x="320" y="145" fill="#FFEAA7" font-size="14" font-family="monospace">Camera → FaceID → ✔</text>
+
+          <!-- Digital Classroom Attendance Display -->
+          <g class="attendance-board" transform="translate(580, 70)">
+            <rect x="0" y="0" width="160" height="130" rx="10" fill="#1A1508" stroke="#FFA502" stroke-width="2.5"/>
+            <text x="16" y="26" fill="#FFA502" font-size="10" font-family="'Fredoka', sans-serif" font-weight="bold">ATTENDANCE</text>
+            <rect x="16" y="36" width="128" height="50" rx="6" fill="#0B0903"/>
+            <text x="35" y="72" fill="#2ED573" font-size="34" font-family="'Outfit', sans-serif" font-weight="900" class="attend-counter-text">0/4</text>
+            <rect x="16" y="96" width="128" height="22" rx="4" fill="#FFA502" class="attend-status-bg"/>
+            <text x="32" y="111" fill="#0B0903" font-size="10" font-family="'Fredoka', sans-serif" font-weight="bold" class="attend-status-text">SCANNING...</text>
+          </g>
+
+          <!-- Smart Ceiling Camera Panning and Scanning -->
+          <g class="classroom-camera-group" transform="translate(400, 20)">
+            <rect x="-10" y="0" width="20" height="20" fill="#4B5563"/>
+            <circle cx="0" cy="24" r="8" fill="#374151"/>
+            
+            <g class="class-cam-head">
+              <rect x="-24" y="24" width="48" height="28" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+              <ellipse cx="0" cy="38" rx="12" ry="8" fill="#1F2937"/>
+              <circle cx="0" cy="38" r="6" fill="#2ED573" filter="url(#tickGlow)"/>
+              <circle cx="2" cy="36" r="2" fill="#FFFFFF"/>
+              <polygon points="0,42 -70,280 70,280" fill="url(#faceScanRay)" class="face-scan-cone"/>
+            </g>
+          </g>
+
+          <!-- 4 Students Seated at Desks -->
+          <!-- Student 1: Mia -->
+          <g class="student-unit student-1" transform="translate(80, 250)">
+            <rect x="10" y="90" width="120" height="50" rx="4" fill="#6D4C41"/>
+            <rect x="0" y="85" width="140" height="10" rx="2" fill="#8D6E63"/>
+            <rect x="25" y="70" width="35" height="15" rx="2" fill="#3B82F6"/>
+
+            <g class="student-char interactive-char" data-tooltip="Mia: Here! Present!" tabindex="0" role="button" aria-label="Student Mia">
+              <path d="M45,65 Q70,55 95,65 L98,110 L42,110 Z" fill="#FF7F50"/>
+              <circle cx="70" cy="40" r="18" fill="#FAD0C4"/>
+              <path d="M56,30 Q45,25 48,12 Q62,16 66,28 Z" fill="#4A2E18"/>
+              <circle cx="56" cy="28" r="3" fill="#FF4757"/>
+              <circle cx="65" cy="40" r="2.5" fill="#1E293B"/>
+              <circle cx="75" cy="40" r="2.5" fill="#1E293B"/>
+              <path d="M66,48 Q70,53 74,48" stroke="#1E293B" stroke-width="1.5" fill="none"/>
+            </g>
+
+            <g class="face-target reticle-1">
+              <rect x="52" y="22" width="36" height="36" rx="4" fill="none" stroke="#2ED573" stroke-width="2" stroke-dasharray="6 3"/>
+              <text x="54" y="16" fill="#2ED573" font-size="8" font-family="monospace">ID: MIA</text>
+            </g>
+
+            <g class="green-tick-badge tick-1" filter="url(#tickGlow)">
+              <circle cx="70" cy="-5" r="14" fill="#2ED573"/>
+              <path d="M64,-5 L68,-1 L77,-10" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </g>
+          </g>
+
+          <!-- Student 2: Leo -->
+          <g class="student-unit student-2" transform="translate(240, 250)">
+            <rect x="10" y="90" width="120" height="50" rx="4" fill="#6D4C41"/>
+            <rect x="0" y="85" width="140" height="10" rx="2" fill="#8D6E63"/>
+            <rect x="75" y="68" width="30" height="17" rx="2" fill="#E2E8F0"/>
+
+            <g class="student-char interactive-char" data-tooltip="Leo: Present!" tabindex="0" role="button" aria-label="Student Leo">
+              <path d="M45,65 Q70,55 95,65 L98,110 L42,110 Z" fill="#2ED573"/>
+              <circle cx="70" cy="40" r="18" fill="#FAD0C4"/>
+              <path d="M54,32 Q70,18 86,32 Z" fill="#5D4037"/>
+              <circle cx="64" cy="40" r="5" fill="none" stroke="#1E293B" stroke-width="1.5"/>
+              <circle cx="76" cy="40" r="5" fill="none" stroke="#1E293B" stroke-width="1.5"/>
+              <line x1="69" y1="40" x2="71" y2="40" stroke="#1E293B" stroke-width="1.5"/>
+              <circle cx="64" cy="40" r="2" fill="#1E293B"/>
+              <circle cx="76" cy="40" r="2" fill="#1E293B"/>
+              <path d="M67,48 Q70,52 73,48" stroke="#1E293B" stroke-width="1.5" fill="none"/>
+            </g>
+
+            <g class="face-target reticle-2">
+              <rect x="52" y="22" width="36" height="36" rx="4" fill="none" stroke="#2ED573" stroke-width="2" stroke-dasharray="6 3"/>
+              <text x="54" y="16" fill="#2ED573" font-size="8" font-family="monospace">ID: LEO</text>
+            </g>
+
+            <g class="green-tick-badge tick-2" filter="url(#tickGlow)">
+              <circle cx="70" cy="-5" r="14" fill="#2ED573"/>
+              <path d="M64,-5 L68,-1 L77,-10" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </g>
+          </g>
+
+          <!-- Student 3: Sam -->
+          <g class="student-unit student-3" transform="translate(420, 250)">
+            <rect x="10" y="90" width="120" height="50" rx="4" fill="#6D4C41"/>
+            <rect x="0" y="85" width="140" height="10" rx="2" fill="#8D6E63"/>
+            <rect x="30" y="70" width="35" height="15" rx="2" fill="#EF4444"/>
+
+            <g class="student-char interactive-char" data-tooltip="Sam: Present and ready!" tabindex="0" role="button" aria-label="Student Sam">
+              <path d="M45,65 Q70,55 95,65 L98,110 L42,110 Z" fill="#3B82F6"/>
+              <circle cx="70" cy="40" r="18" fill="#FAD0C4"/>
+              <path d="M54,34 Q70,18 86,34 L88,38 L52,38 Z" fill="#FFA502"/>
+              <circle cx="70" cy="20" r="3" fill="#FF4757"/>
+              <circle cx="65" cy="40" r="2.5" fill="#1E293B"/>
+              <circle cx="75" cy="40" r="2.5" fill="#1E293B"/>
+              <path d="M66,48 Q70,53 74,48" stroke="#1E293B" stroke-width="1.5" fill="none"/>
+            </g>
+
+            <g class="face-target reticle-3">
+              <rect x="52" y="22" width="36" height="36" rx="4" fill="none" stroke="#2ED573" stroke-width="2" stroke-dasharray="6 3"/>
+              <text x="54" y="16" fill="#2ED573" font-size="8" font-family="monospace">ID: SAM</text>
+            </g>
+
+            <g class="green-tick-badge tick-3" filter="url(#tickGlow)">
+              <circle cx="70" cy="-5" r="14" fill="#2ED573"/>
+              <path d="M64,-5 L68,-1 L77,-10" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </g>
+          </g>
+
+          <!-- Student 4: Zoe -->
+          <g class="student-unit student-4" transform="translate(600, 250)">
+            <rect x="10" y="90" width="120" height="50" rx="4" fill="#6D4C41"/>
+            <rect x="0" y="85" width="140" height="10" rx="2" fill="#8D6E63"/>
+            <rect x="40" y="68" width="40" height="17" rx="2" fill="#10B981"/>
+
+            <g class="student-char interactive-char" data-tooltip="Zoe: Present!" tabindex="0" role="button" aria-label="Student Zoe">
+              <path d="M45,65 Q70,55 95,65 L98,110 L42,110 Z" fill="#8854D0"/>
+              <circle cx="58" cy="30" r="10" fill="#3E2723"/>
+              <circle cx="70" cy="24" r="10" fill="#3E2723"/>
+              <circle cx="82" cy="30" r="10" fill="#3E2723"/>
+              <circle cx="70" cy="40" r="18" fill="#FAD0C4"/>
+              <circle cx="65" cy="40" r="2.5" fill="#1E293B"/>
+              <circle cx="75" cy="40" r="2.5" fill="#1E293B"/>
+              <path d="M66,48 Q70,53 74,48" stroke="#1E293B" stroke-width="1.5" fill="none"/>
+            </g>
+
+            <g class="face-target reticle-4">
+              <rect x="52" y="22" width="36" height="36" rx="4" fill="none" stroke="#2ED573" stroke-width="2" stroke-dasharray="6 3"/>
+              <text x="54" y="16" fill="#2ED573" font-size="8" font-family="monospace">ID: ZOE</text>
+            </g>
+
+            <g class="green-tick-badge tick-4" filter="url(#tickGlow)">
+              <circle cx="70" cy="-5" r="14" fill="#2ED573"/>
+              <path d="M64,-5 L68,-1 L77,-10" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <div class="scene-actions">
+        <button class="scene-interactive-btn btn-scan-all" id="btnScanAllA">📋 Scan All Faces</button>
+        <button class="scene-replay-btn" data-target="scene-a">Replay Action ↺</button>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SCENE 4: M - MODIFY (Green: #2ED573)
+         Dark campus lane at night. Left: camera with 1 small light (small cone).
+         Right: camera with ring of LED lights (wide bright cone).
+         The scene brightens and a student walking becomes clearly visible!
+         =================================================================== -->
+    <section class="scene-section scene-m" id="scene-m" data-letter="M">
+      <div class="scene-header">
+        <div class="scene-badge badge-m">M</div>
+        <h2 class="scene-title">Night Vision Boost</h2>
+      </div>
+
+      <div class="scene-stage">
+        <svg viewBox="0 0 800 500" class="scene-svg" id="svg-scene-m" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="nightSkyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#05140C"/>
+              <stop offset="60%" stop-color="#082214"/>
+              <stop offset="100%" stop-color="#04120A"/>
+            </linearGradient>
+            <radialGradient id="dimConeGrad" cx="20%" cy="20%" r="80%">
+              <stop offset="0%" stop-color="#FFF3B0" stop-opacity="0.35"/>
+              <stop offset="50%" stop-color="#FFF3B0" stop-opacity="0.1"/>
+              <stop offset="100%" stop-color="#FFF3B0" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="brightConeGrad" cx="50%" cy="0%" r="100%">
+              <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+              <stop offset="30%" stop-color="#7BED9F" stop-opacity="0.75"/>
+              <stop offset="70%" stop-color="#2ED573" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#2ED573" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="ledGlowFilter" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="5" result="blur"/>
+              <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+          </defs>
+
+          <!-- Dark Night Sky -->
+          <rect x="0" y="0" width="800" height="500" fill="url(#nightSkyGrad)"/>
+          
+          <!-- Stars & Crescent Moon -->
+          <g class="night-stars" opacity="0.6">
+            <circle cx="80" cy="50" r="1.5" fill="#FFFFFF"/>
+            <circle cx="210" cy="30" r="2" fill="#FFFFFF"/>
+            <circle cx="340" cy="65" r="1.5" fill="#FFFFFF"/>
+            <circle cx="460" cy="40" r="2" fill="#FFFFFF"/>
+            <circle cx="620" cy="55" r="1.5" fill="#FFFFFF"/>
+            <circle cx="740" cy="35" r="2" fill="#FFFFFF"/>
+            <path d="M720,50 A16,16 0 1,0 736,76 A20,20 0 1,1 720,50 Z" fill="#FFEAA7"/>
+          </g>
+
+          <!-- Trees -->
+          <g fill="#020B06">
+            <path d="M-20,380 Q20,180 70,380 Z"/>
+            <path d="M60,380 Q110,210 160,380 Z"/>
+            <path d="M660,380 Q710,200 760,380 Z"/>
+            <path d="M740,380 Q790,220 840,380 Z"/>
+          </g>
+
+          <!-- Walkway -->
+          <polygon points="0,400 800,400 800,500 0,500" fill="#0A180E"/>
+          <g stroke="#162E1C" stroke-width="2" opacity="0.4">
+            <line x1="0" y1="440" x2="800" y2="440"/>
+            <line x1="100" y1="400" x2="60" y2="500"/>
+            <line x1="250" y1="400" x2="220" y2="500"/>
+            <line x1="400" y1="400" x2="390" y2="500"/>
+            <line x1="550" y1="400" x2="560" y2="500"/>
+            <line x1="700" y1="400" x2="730" y2="500"/>
+          </g>
+
+          <!-- LEFT: Standard Camera with 1 weak LED -->
+          <g class="left-comparison">
+            <rect x="80" y="40" width="160" height="26" rx="13" fill="#1B261E" stroke="#374151" stroke-width="1.5"/>
+            <text x="100" y="57" fill="#9CA3AF" font-size="11" font-family="'Fredoka', sans-serif">1 Tiny LED • Narrow</text>
+
+            <rect x="180" y="70" width="10" height="70" fill="#374151"/>
+            <rect x="170" y="130" width="45" height="24" rx="4" fill="#4B5563"/>
+            <circle cx="174" cy="142" r="3" fill="#FEF08A"/>
+            
+            <polygon points="174,142 90,360 210,360" fill="url(#dimConeGrad)" class="weak-cone"/>
+
+            <g class="student-in-dark" transform="translate(130, 270)">
+              <ellipse cx="20" cy="115" rx="16" ry="5" fill="rgba(0,0,0,0.5)"/>
+              <path d="M10,60 Q20,50 30,60 L32,110 L8,110 Z" fill="#0E1E14"/>
+              <circle cx="20" cy="38" r="14" fill="#14261B"/>
+              <text x="15" y="24" fill="#6B7280" font-size="12">?</text>
+            </g>
+          </g>
+
+          <!-- Dividing Center Line -->
+          <line x1="400" y1="40" x2="400" y2="440" stroke="#2ED573" stroke-width="2" stroke-dasharray="8 6" opacity="0.4"/>
+          <circle cx="400" cy="240" r="18" fill="#082214" stroke="#2ED573" stroke-width="2"/>
+          <text x="394" y="245" fill="#2ED573" font-size="13" font-family="'Outfit', sans-serif" font-weight="bold">VS</text>
+
+          <!-- RIGHT: Modified Camera with Ring LEDs -->
+          <g class="right-comparison">
+            <rect x="560" y="40" width="170" height="26" rx="13" fill="#0C341D" stroke="#2ED573" stroke-width="1.5"/>
+            <text x="578" y="57" fill="#2ED573" font-size="11" font-family="'Fredoka', sans-serif" font-weight="bold">Ring LED Array • Wide</text>
+
+            <g class="smart-led-camera" transform="translate(580, 80)">
+              <rect x="35" y="0" width="12" height="40" fill="#E2E8F0"/>
+              <rect x="15" y="35" width="52" height="44" rx="8" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2"/>
+              <circle cx="41" cy="57" r="12" fill="#0A192F"/>
+              <circle cx="41" cy="57" r="6" fill="#00D2D3"/>
+
+              <g class="led-ring" filter="url(#ledGlowFilter)">
+                <circle cx="41" cy="35" r="4" fill="#FFFFFF" class="ring-led"/>
+                <circle cx="56" cy="41" r="4" fill="#FFFFFF" class="ring-led"/>
+                <circle cx="63" cy="57" r="4" fill="#FFFFFF" class="ring-led"/>
+                <circle cx="56" cy="73" r="4" fill="#FFFFFF" class="ring-led"/>
+                <circle cx="41" cy="79" r="4" fill="#FFFFFF" class="ring-led"/>
+                <circle cx="26" cy="73" r="4" fill="#FFFFFF" class="ring-led"/>
+                <circle cx="19" cy="57" r="4" fill="#FFFFFF" class="ring-led"/>
+                <circle cx="26" cy="41" r="4" fill="#FFFFFF" class="ring-led"/>
+              </g>
+
+              <polygon points="41,75 140,360 480,360" fill="url(#brightConeGrad)" class="bright-wide-cone" transform="translate(-250, 0)"/>
+            </g>
+
+            <!-- Student Leo walking in bright light -->
+            <g class="student-bright-walk interactive-char" transform="translate(560, 240)" data-tooltip="Leo: So bright and safe!" tabindex="0" role="button" aria-label="Student Leo walking">
+              <ellipse cx="40" cy="150" rx="26" ry="8" fill="rgba(46,213,115,0.25)"/>
+
+              <g class="walking-legs">
+                <line x1="32" y1="120" x2="22" y2="148" stroke="#1E293B" stroke-width="7" stroke-linecap="round"/>
+                <line x1="48" y1="120" x2="58" y2="146" stroke="#1E293B" stroke-width="7" stroke-linecap="round"/>
+              </g>
+
+              <path d="M22,70 Q40,60 58,70 L62,122 L18,122 Z" fill="#2ED573" stroke="#FFFFFF" stroke-width="1.5"/>
+              <rect x="10" y="74" width="14" height="28" rx="5" fill="#3B82F6"/>
+              
+              <circle cx="40" cy="44" r="18" fill="#FAD0C4"/>
+              <path d="M24,34 Q40,20 56,34 Z" fill="#5D4037"/>
+              <circle cx="34" cy="44" r="5" fill="none" stroke="#1E293B" stroke-width="1.5"/>
+              <circle cx="46" cy="44" r="5" fill="none" stroke="#1E293B" stroke-width="1.5"/>
+              <circle cx="34" cy="44" r="2.5" fill="#1E293B"/>
+              <circle cx="46" cy="44" r="2.5" fill="#1E293B"/>
+              <path d="M36,53 Q40,59 44,53" stroke="#1E293B" stroke-width="2" fill="none"/>
+              <circle cx="28" cy="48" r="3" fill="#FF8A80" opacity="0.6"/>
+              <circle cx="52" cy="48" r="3" fill="#FF8A80" opacity="0.6"/>
+
+              <path d="M58,78 Q74,68 76,52" stroke="#2ED573" stroke-width="6" stroke-linecap="round" fill="none" class="leo-wave-arm"/>
+              <circle cx="76" cy="50" r="5" fill="#FAD0C4"/>
+              <path d="M78,38 L80,30 L82,38 L90,40 L82,42 L80,50 L78,42 L70,40 Z" fill="#FFD700" class="bright-sparkle"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <div class="scene-actions">
+        <button class="scene-interactive-btn btn-light-boost" id="btnLightBoostM">💡 Boost Brightness</button>
+        <button class="scene-replay-btn" data-target="scene-m">Replay Action ↺</button>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SCENE 5: P - PUT TO ANOTHER USE (Blue: #1E90FF)
+         Campus Gate: Student with bag walks through gate under dome camera.
+         Red beam scans, metal object in pocket gets red box & beep ripple effect.
+         =================================================================== -->
+    <section class="scene-section scene-p" id="scene-p" data-letter="P">
+      <div class="scene-header">
+        <div class="scene-badge badge-p">P</div>
+        <h2 class="scene-title">Gate Metal Scanner</h2>
+      </div>
+
+      <div class="scene-stage">
+        <svg viewBox="0 0 800 500" class="scene-svg" id="svg-scene-p" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="gateSkyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#05152B"/>
+              <stop offset="60%" stop-color="#0E2B52"/>
+              <stop offset="100%" stop-color="#071932"/>
+            </linearGradient>
+            <linearGradient id="brickGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#80352A"/>
+              <stop offset="100%" stop-color="#9E4336"/>
+            </linearGradient>
+            <linearGradient id="scanBeamGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#FF3838" stop-opacity="0.8"/>
+              <stop offset="50%" stop-color="#FF4757" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#FF3838" stop-opacity="0.05"/>
+            </linearGradient>
+            <filter id="sonarPingGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+          </defs>
+
+          <!-- Sky & Ground -->
+          <rect x="0" y="0" width="800" height="500" fill="url(#gateSkyGrad)"/>
+          <rect x="0" y="380" width="800" height="120" fill="#0B1A2F"/>
+          <line x1="0" y1="380" x2="800" y2="380" stroke="#1E90FF" stroke-width="2" opacity="0.4"/>
+
+          <!-- Pillars -->
+          <rect x="140" y="80" width="80" height="300" fill="url(#brickGrad)" stroke="#5C251D" stroke-width="2"/>
+          <rect x="130" y="65" width="100" height="15" rx="3" fill="#D1D5DB"/>
+          <rect x="580" y="80" width="80" height="300" fill="url(#brickGrad)" stroke="#5C251D" stroke-width="2"/>
+          <rect x="570" y="65" width="100" height="15" rx="3" fill="#D1D5DB"/>
+
+          <!-- Arch -->
+          <path d="M220,95 L580,95 L580,65 L220,65 Z" fill="#D1D5DB" stroke="#9CA3AF" stroke-width="2"/>
+          <rect x="260" y="35" width="280" height="32" rx="6" fill="#1E3A8A"/>
+          <text x="310" y="57" fill="#FFFFFF" font-size="14" font-family="'Fredoka', sans-serif" font-weight="bold" letter-spacing="2">CAMPUS MAIN GATE</text>
+
+          <rect x="220" y="320" width="24" height="60" rx="4" fill="#4B5563"/>
+          <rect x="556" y="320" width="24" height="60" rx="4" fill="#4B5563"/>
+          <circle cx="232" cy="312" r="6" fill="#FF4757" class="gate-warning-light" filter="url(#sonarPingGlow)"/>
+
+          <!-- Dome Camera -->
+          <g class="gate-dome-camera" transform="translate(370, 95)">
+            <rect x="0" y="0" width="60" height="10" rx="2" fill="#E2E8F0"/>
+            <path d="M6,10 Q30,48 54,10 Z" fill="#1E293B" stroke="#CBD5E1" stroke-width="2"/>
+            <circle cx="30" cy="22" r="10" fill="#0F172A"/>
+            <circle cx="30" cy="24" r="5" fill="#FF3838" class="dome-ir-eye" filter="url(#sonarPingGlow)"/>
+            <circle cx="32" cy="22" r="1.5" fill="#FFFFFF"/>
+          </g>
+
+          <!-- Holographic Scan Beam -->
+          <g class="hologram-scan-curtain">
+            <polygon points="400,125 320,380 480,380" fill="url(#scanBeamGrad)" class="scan-plane"/>
+            <line x1="330" y1="280" x2="470" y2="280" stroke="#FF4757" stroke-width="3" filter="url(#sonarPingGlow)" class="moving-scan-line"/>
+          </g>
+
+          <!-- Student Walking Through Gate -->
+          <g class="student-walking-gate interactive-char" transform="translate(360, 210)" data-tooltip="Student: Just walking to class..." tabindex="0" role="button" aria-label="Student walking through gate">
+            <ellipse cx="40" cy="170" rx="28" ry="8" fill="rgba(0,0,0,0.3)"/>
+
+            <line x1="30" y1="130" x2="20" y2="168" stroke="#1E293B" stroke-width="7" stroke-linecap="round"/>
+            <line x1="48" y1="130" x2="58" y2="166" stroke="#1E293B" stroke-width="7" stroke-linecap="round"/>
+
+            <path d="M22,70 Q40,60 58,70 L62,132 L18,132 Z" fill="#3B82F6"/>
+            <rect x="8" y="74" width="18" height="38" rx="6" fill="#F97316"/>
+
+            <circle cx="40" cy="44" r="18" fill="#FAD0C4"/>
+            <path d="M26,34 Q40,20 54,34 Z" fill="#4B2E18"/>
+            <circle cx="36" cy="44" r="2.5" fill="#1E293B"/>
+            <circle cx="46" cy="44" r="2.5" fill="#1E293B"/>
+            <path d="M38,52 Q41,56 44,52" stroke="#1E293B" stroke-width="1.5" fill="none"/>
+
+            <!-- Contraband / Metal Object in Pocket -->
+            <g class="metal-detection-target" transform="translate(44, 98)" filter="url(#sonarPingGlow)">
+              <path d="M4,2 L14,16 M14,2 L4,16" stroke="#94A3B8" stroke-width="3" stroke-linecap="round"/>
+              <rect x="-4" y="-4" width="26" height="26" rx="4" fill="none" stroke="#FF3838" stroke-width="2.5" stroke-dasharray="6 3" class="metal-red-box"/>
+              <path d="M-8,-8 L-2,-8 M-8,-8 L-8,-2" stroke="#FF3838" stroke-width="3"/>
+              <path d="M26,-8 L20,-8 M26,-8 L26,-2" stroke="#FF3838" stroke-width="3"/>
+              <path d="M-8,26 L-2,26 M-8,26 L-8,20" stroke="#FF3838" stroke-width="3"/>
+              <path d="M26,26 L20,26 M26,26 L26,20" stroke="#FF3838" stroke-width="3"/>
+
+              <circle cx="9" cy="9" r="14" stroke="#FF3838" stroke-width="2" fill="none" class="sonar-ring r-1"/>
+              <circle cx="9" cy="9" r="24" stroke="#FF4757" stroke-width="1.5" fill="none" class="sonar-ring r-2"/>
+              <circle cx="9" cy="9" r="34" stroke="#FF6B81" stroke-width="1" fill="none" class="sonar-ring r-3"/>
+
+              <rect x="28" y="-2" width="60" height="18" rx="4" fill="#FF3838"/>
+              <text x="32" y="11" fill="#FFFFFF" font-size="8" font-family="'Fredoka', sans-serif" font-weight="bold">METAL BEEP!</text>
+            </g>
+          </g>
+
+          <!-- Guard at Gate -->
+          <g class="guard-at-gate interactive-char" transform="translate(670, 240)" data-tooltip="Officer Dan: Security Scanner Active!" tabindex="0" role="button" aria-label="Security Guard watching tablet">
+            <ellipse cx="25" cy="140" rx="20" ry="6" fill="rgba(0,0,0,0.3)"/>
+            <path d="M10,65 Q25,55 40,65 L44,135 L6,135 Z" fill="#1E3799"/>
+            <circle cx="25" cy="40" r="16" fill="#FAD0C4"/>
+            <path d="M20,47 Q25,52 30,47" stroke="#4A342B" stroke-width="2" fill="none"/>
+            <ellipse cx="25" cy="28" rx="18" ry="7" fill="#1E3799"/>
+            <path d="M12,26 Q25,18 38,26 L40,32 L10,32 Z" fill="#1E3799"/>
+            <rect x="-8" y="75" width="28" height="20" rx="3" fill="#1E293B" stroke="#64748B" stroke-width="1.5"/>
+            <rect x="-5" y="78" width="22" height="14" rx="2" fill="#FF3838"/>
+            <circle cx="6" cy="85" r="3" fill="#FFFFFF"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="scene-actions">
+        <button class="scene-interactive-btn btn-scan-metal" id="btnScanMetalP">🚨 Trigger Metal Alarm</button>
+        <button class="scene-replay-btn" data-target="scene-p">Replay Action ↺</button>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SCENE 6: E - ELIMINATE (Purple: #8854D0)
+         IT Room: Two cables (power and data) go from camera to switch.
+         Power cable gets cut and fades away.
+         One cable remains with glowing dots moving through it (power & data together).
+         =================================================================== -->
+    <section class="scene-section scene-e" id="scene-e" data-letter="E">
+      <div class="scene-header">
+        <div class="scene-badge badge-e">E</div>
+        <h2 class="scene-title">Single Cable PoE</h2>
+      </div>
+
+      <div class="scene-stage">
+        <svg viewBox="0 0 800 500" class="scene-svg" id="svg-scene-e" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="itRoomGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#190B2E"/>
+              <stop offset="60%" stop-color="#28114A"/>
+              <stop offset="100%" stop-color="#120622"/>
+            </linearGradient>
+            <linearGradient id="rackGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#1E1E2E"/>
+              <stop offset="100%" stop-color="#313244"/>
+            </linearGradient>
+            <filter id="poeEnergyGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+          </defs>
+
+          <!-- IT Room Wall & Floor -->
+          <rect x="0" y="0" width="800" height="500" fill="url(#itRoomGrad)"/>
+          <line x1="0" y1="380" x2="800" y2="380" stroke="#8854D0" stroke-width="2" opacity="0.4"/>
+          <rect x="0" y="380" width="800" height="120" fill="#0D0418"/>
+
+          <!-- Server Rack Cabinet -->
+          <rect x="520" y="60" width="200" height="340" rx="10" fill="url(#rackGrad)" stroke="#45475A" stroke-width="3"/>
+          <rect x="540" y="80" width="160" height="300" rx="6" fill="#11111B"/>
+
+          <!-- Patch Panel -->
+          <rect x="550" y="95" width="140" height="35" rx="4" fill="#181825" stroke="#313244" stroke-width="1.5"/>
+          <g fill="#A6ADC8" font-size="7" font-family="monospace">
+            <text x="560" y="108">CAT6A PATCH</text>
+            <rect x="560" y="114" width="10" height="10" rx="2" fill="#313244"/>
+            <rect x="575" y="114" width="10" height="10" rx="2" fill="#313244"/>
+            <rect x="590" y="114" width="10" height="10" rx="2" fill="#313244"/>
+            <rect x="605" y="114" width="10" height="10" rx="2" fill="#313244"/>
+            <rect x="620" y="114" width="10" height="10" rx="2" fill="#313244"/>
+            <rect x="635" y="114" width="10" height="10" rx="2" fill="#313244"/>
+            <rect x="650" y="114" width="10" height="10" rx="2" fill="#313244"/>
+            <rect x="665" y="114" width="10" height="10" rx="2" fill="#313244"/>
+          </g>
+
+          <!-- PoE Gigabit Switch -->
+          <rect x="550" y="145" width="140" height="45" rx="4" fill="#1E1E2E" stroke="#8854D0" stroke-width="2"/>
+          <text x="560" y="160" fill="#CBA6F7" font-size="9" font-family="'Fredoka', sans-serif" font-weight="bold">PoE+ GIGABIT SWITCH</text>
+          <circle cx="565" cy="175" r="3" fill="#2ED573" class="switch-led s-l1"/>
+          <circle cx="575" cy="175" r="3" fill="#2ED573" class="switch-led s-l2"/>
+          <circle cx="585" cy="175" r="3" fill="#FFA502" class="switch-led s-l3"/>
+          <circle cx="595" cy="175" r="3" fill="#2ED573" class="switch-led s-l4"/>
+          <rect x="615" y="166" width="16" height="14" rx="2" fill="#8854D0" filter="url(#poeEnergyGlow)"/>
+          <text x="638" y="177" fill="#8854D0" font-size="8" font-family="monospace">PORT 01</text>
+
+          <!-- Servers -->
+          <rect x="550" y="205" width="140" height="40" rx="4" fill="#181825"/>
+          <circle cx="565" cy="225" r="4" fill="#89B4FA"/>
+          <line x1="580" y1="225" x2="670" y2="225" stroke="#313244" stroke-width="4" stroke-dasharray="8 4"/>
+
+          <rect x="550" y="260" width="140" height="40" rx="4" fill="#181825"/>
+          <circle cx="565" cy="280" r="4" fill="#A6E3A1"/>
+          <line x1="580" y1="280" x2="670" y2="280" stroke="#313244" stroke-width="4" stroke-dasharray="8 4"/>
+
+          <!-- Camera Mount -->
+          <g class="poe-camera-mount" transform="translate(100, 150)">
+            <rect x="0" y="0" width="16" height="50" rx="3" fill="#45475A"/>
+            <path d="M16,25 L45,25 L45,35" stroke="#585B70" stroke-width="8" stroke-linecap="round" fill="none"/>
+            <rect x="35" y="25" width="65" height="38" rx="8" fill="#FFFFFF" stroke="#BAC2DE" stroke-width="2"/>
+            <circle cx="95" cy="44" r="10" fill="#11111B"/>
+            <circle cx="95" cy="44" r="5" fill="#8854D0" class="cam-poe-eye"/>
+            <circle cx="97" cy="42" r="1.5" fill="#FFFFFF"/>
+            <rect x="27" y="30" width="10" height="8" rx="2" fill="#F38BA8"/>
+            <rect x="27" y="44" width="10" height="8" rx="2" fill="#8854D0"/>
+            <rect x="42" y="30" width="40" height="12" rx="3" fill="#8854D0"/>
+            <text x="46" y="39" fill="#FFFFFF" font-size="7" font-weight="bold" font-family="'Fredoka', sans-serif">PoE 48V</text>
+          </g>
+
+          <!-- CABLE 1: BULKY POWER CABLE (SNIPPED & DISSOLVES!) -->
+          <g class="power-cable-group">
+            <path d="M127,184 Q220,120 310,175" stroke="#F59E0B" stroke-width="7" stroke-linecap="round" fill="none" class="power-cable-l"/>
+            <path d="M330,185 Q420,240 500,260" stroke="#F59E0B" stroke-width="7" stroke-linecap="round" fill="none" class="power-cable-r"/>
+            <path d="M130,184 Q220,120 310,175" stroke="#111827" stroke-width="7" stroke-dasharray="10 10" fill="none" class="power-cable-stripes"/>
+            
+            <g class="power-label-tag" transform="translate(200, 130)">
+              <rect x="0" y="0" width="62" height="18" rx="4" fill="#F59E0B"/>
+              <text x="6" y="13" fill="#111827" font-size="9" font-family="'Fredoka', sans-serif" font-weight="bold">⚡ POWER 230V</text>
+            </g>
+
+            <g class="scissors-cut-unit" transform="translate(300, 145)">
+              <g class="scissors-blades">
+                <path d="M-10,-15 L20,10" stroke="#E2E8F0" stroke-width="5" stroke-linecap="round"/>
+                <path d="M-10,25 L20,0" stroke="#E2E8F0" stroke-width="5" stroke-linecap="round"/>
+                <circle cx="-16" cy="-20" r="8" fill="none" stroke="#EF4444" stroke-width="4"/>
+                <circle cx="-16" cy="30" r="8" fill="none" stroke="#EF4444" stroke-width="4"/>
+                <circle cx="8" cy="5" r="3" fill="#475569"/>
+              </g>
+              <g class="snip-sparks">
+                <path d="M18,-5 L28,-12 M22,5 L32,5 M18,15 L28,22" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round"/>
+                <text x="25" y="-16" fill="#FFD700" font-size="12" font-family="'Outfit', sans-serif" font-weight="900">SNIP!</text>
+              </g>
+            </g>
+
+            <g class="fade-sparkles" transform="translate(320, 180)">
+              <circle cx="-30" cy="-10" r="3" fill="#F59E0B" class="sp-dot d-1"/>
+              <circle cx="0" cy="15" r="2.5" fill="#FFEAA7" class="sp-dot d-2"/>
+              <circle cx="30" cy="-5" r="3" fill="#FFFFFF" class="sp-dot d-3"/>
+            </g>
+          </g>
+
+          <!-- CABLE 2: SINGLE ETHERNET CABLE (PoE) -->
+          <g class="poe-cable-group">
+            <path d="M127,198 Q320,290 622,174" stroke="#8854D0" stroke-width="8" stroke-linecap="round" fill="none" class="poe-main-wire"/>
+            <path d="M127,198 Q320,290 622,174" stroke="#CBA6F7" stroke-width="2" fill="none" opacity="0.6"/>
+
+            <g class="poe-dots-stream" filter="url(#poeEnergyGlow)">
+              <circle cx="150" cy="208" r="4.5" fill="#00D2D3" class="poe-dot dot-1"/>
+              <circle cx="210" cy="230" r="4" fill="#FFD700" class="poe-dot dot-2"/>
+              <circle cx="280" cy="248" r="4.5" fill="#00D2D3" class="poe-dot dot-3"/>
+              <circle cx="360" cy="254" r="4" fill="#FFD700" class="poe-dot dot-4"/>
+              <circle cx="440" cy="242" r="4.5" fill="#00D2D3" class="poe-dot dot-5"/>
+              <circle cx="520" cy="216" r="4" fill="#FFD700" class="poe-dot dot-6"/>
+              <circle cx="590" cy="186" r="4.5" fill="#00D2D3" class="poe-dot dot-7"/>
+            </g>
+
+            <g class="poe-badge-pill" transform="translate(320, 290)">
+              <rect x="0" y="0" width="130" height="26" rx="13" fill="#8854D0" stroke="#FFFFFF" stroke-width="1.5" filter="url(#poeEnergyGlow)"/>
+              <text x="14" y="17" fill="#FFFFFF" font-size="10" font-family="'Fredoka', sans-serif" font-weight="bold">⚡ 1 CABLE = DATA + POWER</text>
+            </g>
+          </g>
+
+          <!-- AI Mascot CamBot -->
+          <g class="cambot-it interactive-char" transform="translate(340, 360)" data-tooltip="CamBot: No messy cables!" tabindex="0" role="button" aria-label="CamBot mascot">
+            <ellipse cx="30" cy="65" rx="20" ry="6" fill="rgba(0,0,0,0.3)"/>
+            <rect x="10" y="15" width="40" height="46" rx="20" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+            <rect x="16" y="24" width="28" height="18" rx="8" fill="#0A192F"/>
+            <path d="M22,34 Q25,30 28,34" stroke="#00D2D3" stroke-width="2" fill="none"/>
+            <path d="M32,34 Q35,30 38,34" stroke="#00D2D3" stroke-width="2" fill="none"/>
+            <circle cx="30" cy="4" r="4" fill="#8854D0"/>
+            <line x1="30" y1="15" x2="30" y2="8" stroke="#8854D0" stroke-width="2"/>
+            <path d="M10,38 Q-2,32 0,22" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none"/>
+            <circle cx="0" cy="20" r="3" fill="#00D2D3"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="scene-actions">
+        <button class="scene-interactive-btn btn-snip-wire" id="btnSnipWireE">✂️ Snip AC Cable</button>
+        <button class="scene-replay-btn" data-target="scene-e">Replay Action ↺</button>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SCENE 7: R - REVERSE (Pink: #ED4C67)
+         Playground: Camera detaches from dock, flies like a drone to a student,
+         scans, and flies back to charge in the dock.
+         =================================================================== -->
+    <section class="scene-section scene-r" id="scene-r" data-letter="R">
+      <div class="scene-header">
+        <div class="scene-badge badge-r">R</div>
+        <h2 class="scene-title">Autonomous Drone Patrol</h2>
+      </div>
+
+      <div class="scene-stage">
+        <svg viewBox="0 0 800 500" class="scene-svg" id="svg-scene-r" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="fieldSkyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2B0515"/>
+              <stop offset="60%" stop-color="#460B24"/>
+              <stop offset="100%" stop-color="#1B040E"/>
+            </linearGradient>
+            <linearGradient id="grassGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#15803D"/>
+              <stop offset="100%" stop-color="#0F5127"/>
+            </linearGradient>
+            <radialGradient id="droneScanRay" cx="50%" cy="0%" r="100%">
+              <stop offset="0%" stop-color="#FF3838" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#FF3838" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="chargeGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="4" result="blur"/>
+              <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+          </defs>
+
+          <!-- Sky & Running Track -->
+          <rect x="0" y="0" width="800" height="500" fill="url(#fieldSkyGrad)"/>
+          <ellipse cx="400" cy="380" rx="440" ry="100" fill="#991B1B" opacity="0.3"/>
+          <ellipse cx="400" cy="380" rx="420" ry="90" fill="#7F1D1D" opacity="0.2"/>
+          <line x1="0" y1="365" x2="800" y2="365" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.4"/>
+
+          <!-- Pitch -->
+          <rect x="0" y="370" width="800" height="130" fill="url(#grassGrad)"/>
+          <line x1="0" y1="370" x2="800" y2="370" stroke="#FFFFFF" stroke-width="2" opacity="0.6"/>
+
+          <!-- Goal Post -->
+          <g transform="translate(680, 280)">
+            <rect x="0" y="0" width="6" height="90" fill="#FFFFFF"/>
+            <rect x="60" y="0" width="6" height="90" fill="#FFFFFF"/>
+            <rect x="0" y="0" width="66" height="6" fill="#FFFFFF"/>
+            <path d="M0,0 L20,-20 L86,-20 L66,0 M20,-20 L20,70 L0,90 M86,-20 L86,70 L66,90" stroke="#E2E8F0" stroke-width="1" fill="none" opacity="0.4"/>
+            <circle cx="-25" cy="85" r="9" fill="#FFFFFF" stroke="#1E293B" stroke-width="1.5"/>
+            <circle cx="-25" cy="85" r="3" fill="#1E293B"/>
+          </g>
+
+          <!-- Docking Station on Left Pole -->
+          <g class="dock-station-unit" transform="translate(100, 100)">
+            <rect x="25" y="40" width="10" height="260" fill="#475569"/>
+            <rect x="10" y="35" width="40" height="14" rx="4" fill="#334155"/>
+            <ellipse cx="30" cy="42" rx="28" ry="8" fill="#1E293B" stroke="#ED4C67" stroke-width="2"/>
+            <circle cx="20" cy="42" r="3" fill="#FFD700"/>
+            <circle cx="40" cy="42" r="3" fill="#FFD700"/>
+
+            <g class="dock-charge-badge" filter="url(#chargeGlow)" transform="translate(-10, -20)">
+              <rect x="0" y="0" width="80" height="24" rx="6" fill="#14040A" stroke="#2ED573" stroke-width="1.5"/>
+              <text x="8" y="16" fill="#2ED573" font-size="10" font-family="'Fredoka', sans-serif" font-weight="bold">⚡ 100% CHARGE</text>
+            </g>
+          </g>
+
+          <!-- Flight Path Curve -->
+          <path d="M130,135 Q400,60 540,240 Q450,290 130,142" stroke="#ED4C67" stroke-width="2" stroke-dasharray="6 6" fill="none" opacity="0.35" class="drone-trajectory"/>
+
+          <!-- Student Sam on Pitch -->
+          <g class="student-sports interactive-char" transform="translate(520, 240)" data-tooltip="Sam: Hey AeroCam, safety check!" tabindex="0" role="button" aria-label="Student Sam on sports field">
+            <ellipse cx="35" cy="140" rx="22" ry="6" fill="rgba(0,0,0,0.3)"/>
+            <line x1="28" y1="105" x2="16" y2="138" stroke="#1E293B" stroke-width="6" stroke-linecap="round"/>
+            <line x1="42" y1="105" x2="56" y2="132" stroke="#1E293B" stroke-width="6" stroke-linecap="round"/>
+            <path d="M18,55 Q35,45 52,55 L54,105 L16,105 Z" fill="#3B82F6"/>
+            <circle cx="35" cy="35" r="16" fill="#FAD0C4"/>
+            <path d="M22,30 Q35,16 48,30 L52,34 L18,34 Z" fill="#FFA502"/>
+            <circle cx="35" cy="18" r="3" fill="#FF4757"/>
+            <circle cx="31" cy="35" r="2.5" fill="#1E293B"/>
+            <circle cx="41" cy="35" r="2.5" fill="#1E293B"/>
+            <path d="M32,42 Q36,46 40,42" stroke="#1E293B" stroke-width="1.5" fill="none"/>
+            <path d="M52,65 Q68,52 65,36" stroke="#3B82F6" stroke-width="5" stroke-linecap="round" fill="none"/>
+            <circle cx="65" cy="34" r="4" fill="#FAD0C4"/>
+          </g>
+
+          <!-- Flying Drone Unit -->
+          <g class="flying-aerocam-unit" id="flyingAeroCam">
+            <polygon points="0,20 -45,150 45,150" fill="url(#droneScanRay)" class="drone-down-scan"/>
+            <circle cx="0" cy="0" r="18" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+            <circle cx="0" cy="4" r="10" fill="#0F172A"/>
+            <circle cx="0" cy="4" r="5" fill="#ED4C67" class="drone-lens-glow"/>
+            <circle cx="2" cy="2" r="1.5" fill="#FFFFFF"/>
+            <circle cx="-16" cy="0" r="2.5" fill="#EF4444" class="nav-led n-red"/>
+            <circle cx="16" cy="0" r="2.5" fill="#22C55E" class="nav-led n-green"/>
+
+            <line x1="-12" y1="-10" x2="-26" y2="-22" stroke="#64748B" stroke-width="3" stroke-linecap="round"/>
+            <ellipse cx="-28" cy="-24" rx="14" ry="4" fill="rgba(255,255,255,0.6)" class="propeller prop-tl"/>
+            <circle cx="-28" cy="-24" r="2.5" fill="#1E293B"/>
+
+            <line x1="12" y1="-10" x2="26" y2="-22" stroke="#64748B" stroke-width="3" stroke-linecap="round"/>
+            <ellipse cx="28" cy="-24" rx="14" ry="4" fill="rgba(255,255,255,0.6)" class="propeller prop-tr"/>
+            <circle cx="28" cy="-24" r="2.5" fill="#1E293B"/>
+
+            <line x1="-12" y1="10" x2="-26" y2="22" stroke="#64748B" stroke-width="3" stroke-linecap="round"/>
+            <ellipse cx="-28" cy="24" rx="14" ry="4" fill="rgba(255,255,255,0.6)" class="propeller prop-bl"/>
+            <circle cx="-28" cy="24" r="2.5" fill="#1E293B"/>
+
+            <line x1="12" y1="10" x2="26" y2="22" stroke="#64748B" stroke-width="3" stroke-linecap="round"/>
+            <ellipse cx="28" cy="24" rx="14" ry="4" fill="rgba(255,255,255,0.6)" class="propeller prop-br"/>
+            <circle cx="28" cy="24" r="2.5" fill="#1E293B"/>
+
+            <line x1="0" y1="-18" x2="0" y2="-28" stroke="#ED4C67" stroke-width="2"/>
+            <circle cx="0" cy="-30" r="3" fill="#ED4C67"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="scene-actions">
+        <button class="scene-interactive-btn btn-launch-drone" id="btnLaunchDroneR">🚁 Launch Drone Patrol</button>
+        <button class="scene-replay-btn" data-target="scene-r">Replay Action ↺</button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         CLOSING SCREEN: "One camera. Seven smart ideas."
+         ========================================== -->
+    <section class="screen outro-screen" id="outro">
+      <div class="outro-container">
+        <div class="outro-badge-pill">SCAMPER COMPLETE</div>
+        <h2 class="outro-title">One camera. Seven smart ideas.</h2>
+        
+        <!-- Interactive Group Celebration of all characters -->
+        <div class="celebration-cast" id="celebrationCast">
+          <svg viewBox="0 0 700 240" class="celebration-svg" preserveAspectRatio="xMidYMid meet">
+            <defs>
+              <filter id="confettiGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feGaussianBlur stdDeviation="2" result="blur"/>
+                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+              </filter>
+            </defs>
+            <ellipse cx="350" cy="210" rx="320" ry="24" fill="rgba(0,0,0,0.25)"/>
+
+            <!-- Security Guard Dan -->
+            <g class="celeb-guard interactive-char" transform="translate(100, 60)" data-tooltip="Officer Dan: Safe campus achieved!" tabindex="0" role="button" aria-label="Security Guard Dan">
+              <ellipse cx="30" cy="140" rx="22" ry="6" fill="rgba(0,0,0,0.2)"/>
+              <path d="M12,65 Q30,55 48,65 L52,135 L8,135 Z" fill="#1E3799"/>
+              <circle cx="30" cy="38" r="16" fill="#FAD0C4"/>
+              <path d="M24,45 Q30,50 36,45" stroke="#4A342B" stroke-width="2.5" fill="none"/>
+              <ellipse cx="30" cy="26" rx="18" ry="7" fill="#1E3799"/>
+              <path d="M16,24 Q30,16 44,24 L46,30 L14,30 Z" fill="#1E3799"/>
+              <circle cx="30" cy="22" r="3" fill="#FFD700"/>
+              <path d="M48,80 Q64,70 62,56" stroke="#1E3799" stroke-width="6" stroke-linecap="round" fill="none"/>
+              <circle cx="62" cy="54" r="5" fill="#FAD0C4"/>
+            </g>
+
+            <!-- Mia -->
+            <g class="celeb-mia interactive-char" transform="translate(190, 75)" data-tooltip="Mia: Attendance is automatic!" tabindex="0" role="button" aria-label="Student Mia">
+              <ellipse cx="25" cy="125" rx="18" ry="5" fill="rgba(0,0,0,0.2)"/>
+              <path d="M10,50 Q25,42 40,50 L42,120 L8,120 Z" fill="#FF7F50"/>
+              <circle cx="25" cy="28" r="14" fill="#FAD0C4"/>
+              <path d="M14,20 Q4,16 6,6 Q18,10 22,20 Z" fill="#4A2E18"/>
+              <path d="M19,28 Q22,25 25,28" stroke="#1E293B" stroke-width="2" fill="none"/>
+              <path d="M27,28 Q30,25 33,28" stroke="#1E293B" stroke-width="2" fill="none"/>
+              <path d="M10,52 Q-2,38 4,24" stroke="#FF7F50" stroke-width="5" stroke-linecap="round" fill="none"/>
+              <path d="M40,52 Q52,38 46,24" stroke="#FF7F50" stroke-width="5" stroke-linecap="round" fill="none"/>
+            </g>
+
+            <!-- Mascot CamBot -->
+            <g class="celeb-cambot interactive-char" transform="translate(290, 40)" data-tooltip="CamBot: ♥ Smart CCTV for everyone! ♥" tabindex="0" role="button" aria-label="AI Robot Mascot CamBot">
+              <ellipse cx="35" cy="160" rx="26" ry="8" fill="rgba(0,0,0,0.2)"/>
+              <rect x="10" y="30" width="50" height="58" rx="25" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+              <rect x="18" y="44" width="34" height="20" rx="8" fill="#0A192F"/>
+              <path d="M24,54 C24,51 27,51 28,54 C29,51 32,51 32,54 C32,58 28,60 28,60 C28,60 24,58 24,54 Z" fill="#FF4757"/>
+              <path d="M36,54 C36,51 39,51 40,54 C41,51 44,51 44,54 C44,58 40,60 40,60 C40,60 36,58 36,54 Z" fill="#FF4757"/>
+              <line x1="35" y1="30" x2="35" y2="18" stroke="#70A1FF" stroke-width="2.5"/>
+              <circle cx="35" cy="15" r="5" fill="#00D2D3" filter="url(#confettiGlow)"/>
+              <path d="M10,56 Q-4,46 -2,34" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" fill="none"/>
+              <circle cx="-2" cy="32" r="4" fill="#00D2D3"/>
+              <path d="M60,56 Q74,46 72,34" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" fill="none"/>
+              <circle cx="72" cy="32" r="4" fill="#70A1FF"/>
+            </g>
+
+            <!-- Drone AeroCam -->
+            <g class="celeb-aerocam interactive-char" transform="translate(390, 20)" data-tooltip="AeroCam: Patrolling happily!" tabindex="0" role="button" aria-label="Drone Camera AeroCam">
+              <circle cx="25" cy="20" r="14" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
+              <circle cx="25" cy="22" r="6" fill="#0F172A"/>
+              <circle cx="25" cy="22" r="3" fill="#ED4C67"/>
+              <ellipse cx="6" cy="6" rx="10" ry="3" fill="rgba(255,255,255,0.7)"/>
+              <ellipse cx="44" cy="6" rx="10" ry="3" fill="rgba(255,255,255,0.7)"/>
+              <ellipse cx="6" cy="34" rx="10" ry="3" fill="rgba(255,255,255,0.7)"/>
+              <ellipse cx="44" cy="34" rx="10" ry="3" fill="rgba(255,255,255,0.7)"/>
+            </g>
+
+            <!-- Leo -->
+            <g class="celeb-leo interactive-char" transform="translate(470, 75)" data-tooltip="Leo: Crystal clear night vision!" tabindex="0" role="button" aria-label="Student Leo">
+              <ellipse cx="25" cy="125" rx="18" ry="5" fill="rgba(0,0,0,0.2)"/>
+              <path d="M10,50 Q25,42 40,50 L42,120 L8,120 Z" fill="#2ED573"/>
+              <circle cx="25" cy="28" r="14" fill="#FAD0C4"/>
+              <path d="M12,22 Q25,12 38,22 Z" fill="#5D4037"/>
+              <circle cx="20" cy="28" r="4" fill="none" stroke="#1E293B" stroke-width="1.5"/>
+              <circle cx="30" cy="28" r="4" fill="none" stroke="#1E293B" stroke-width="1.5"/>
+              <path d="M40,52 Q54,42 50,28" stroke="#2ED573" stroke-width="5" stroke-linecap="round" fill="none"/>
+              <circle cx="50" cy="26" r="4" fill="#FAD0C4"/>
+            </g>
+
+            <!-- Sam -->
+            <g class="celeb-sam interactive-char" transform="translate(560, 70)" data-tooltip="Sam: Drone camera is so cool!" tabindex="0" role="button" aria-label="Student Sam">
+              <ellipse cx="25" cy="130" rx="18" ry="5" fill="rgba(0,0,0,0.2)"/>
+              <path d="M10,52 Q25,44 40,52 L42,122 L8,122 Z" fill="#3B82F6"/>
+              <circle cx="25" cy="28" r="14" fill="#FAD0C4"/>
+              <path d="M12,24 Q25,12 38,24 L40,28 L10,28 Z" fill="#FFA502"/>
+              <path d="M40,54 Q56,42 52,30" stroke="#3B82F6" stroke-width="5" stroke-linecap="round" fill="none"/>
+              <circle cx="52" cy="28" r="4" fill="#FAD0C4"/>
+            </g>
+
+            <!-- Confetti -->
+            <g class="celeb-confetti" filter="url(#confettiGlow)">
+              <circle cx="80" cy="30" r="3.5" fill="#FF4757"/>
+              <rect x="140" y="20" width="7" height="7" rx="1.5" fill="#FFA502" transform="rotate(25 143 23)"/>
+              <circle cx="230" cy="15" r="4" fill="#2ED573"/>
+              <rect x="360" y="10" width="8" height="8" rx="2" fill="#1E90FF" transform="rotate(45 364 14)"/>
+              <circle cx="450" cy="18" r="3.5" fill="#8854D0"/>
+              <rect x="530" y="22" width="7" height="7" rx="1.5" fill="#ED4C67" transform="rotate(15 533 25)"/>
+              <circle cx="630" cy="35" r="4" fill="#FFD700"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="scamper-summary-pills">
+          <span class="pill-badge pill-s">S: Substitute</span>
+          <span class="pill-badge pill-c">C: Combine</span>
+          <span class="pill-badge pill-a">A: Adapt</span>
+          <span class="pill-badge pill-m">M: Modify</span>
+          <span class="pill-badge pill-p">P: Put to use</span>
+          <span class="pill-badge pill-e">E: Eliminate</span>
+          <span class="pill-badge pill-r">R: Reverse</span>
+        </div>
+
+        <div class="outro-buttons">
+          <a href="#top" class="replay-journey-btn">
+            <span>Replay Campus Tour</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+              <path d="M3 3v5h5"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       SITE FOOTER (Ownership: Balaji strictly maintained)
+       ========================================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="copyright-line">Created by <strong>Balaji</strong> | &copy; 2026 Balaji. All rights reserved.</p>
+      <p class="footer-subtext">A creative visual demonstration of SCAMPER thinking applied to campus CCTV security.</p>
+    </div>
+  </footer>
+
+  <!-- Light GSAP CDN for smooth animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
